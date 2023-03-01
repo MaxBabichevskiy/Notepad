@@ -13,11 +13,15 @@ namespace Notepad
 {
     public partial class Form1 : Form
     {
+        bool tbChange = false;
+        string docPath = "";
+
         string buffer;
         public Form1()
         {
             InitializeComponent();
 
+            
 
             textBox1.Multiline = true;
             textBox1.Dock = DockStyle.Fill;
@@ -181,7 +185,70 @@ namespace Notepad
 
         private void перейтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void найтиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             
+        }
+
+        private void найтиДалееToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void шрифтToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog.Font = notebox.Font;
+            DialogResult = fontDialog.ShowDialog();
+            if (DialogResult == DialogResult.OK)
+            {
+                notebox.Font = fontDialog.Font;
+            }
+        }
+
+        private void переносПоСловамToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (mFormatTransfer.CheckState == CheckState.Checked)
+            {
+                notebox.WordWrap = true;
+                notebox.ScrollBars = ScrollBars.Vertical;
+                mEditGo.Enabled = false;
+                statusLab1.Visible = false;
+                statusLinesCount.Visible = false;
+            }
+            else
+            {
+                notebox.WordWrap = false;
+                notebox.ScrollBars = ScrollBars.Both;
+                mEditGo.Enabled = true;
+                statusLab1.Visible = true;
+                statusLinesCount.Visible = true;
+            }
+        }
+
+        private void строкаСостоянияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (mViewStatusStrip.CheckState == CheckState.Checked)
+            {
+                statusStrip.Visible = true;
+            }
+            else
+            {
+                statusStrip.Visible = false;
+            }
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm about = new AboutForm();
+            about.Show();
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+            tbChange = true;
         }
     }
 }
