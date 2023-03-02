@@ -106,7 +106,27 @@ namespace Notepad
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.Width = Properties.Settings.Default.formWidth;
+            this.Height = Properties.Settings.Default.formHeight;
+            notebox.Font = Properties.Settings.Default.textFont;
+            if (Properties.Settings.Default.statusStripVisible == true)
+            { mViewStatusStrip.CheckState = CheckState.Checked; }
+            else
+            { mViewStatusStrip.CheckState = CheckState.Unchecked; }
+            if (Properties.Settings.Default.textTransfer == true)
+            { mFormatTransfer.CheckState = CheckState.Checked; }
+            else
+            { mFormatTransfer.CheckState = CheckState.Unchecked; }
+        }
 
+        private void Form1_Closing(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.formWidth = this.Width;
+            Properties.Settings.Default.formHeight = this.Height;
+            Properties.Settings.Default.textTransfer = notebox.WordWrap;
+            Properties.Settings.Default.textFont = notebox.Font;
+            Properties.Settings.Default.statusStripVisible = statusStrip.Visible;
+            Properties.Settings.Default.Save();
         }
 
         private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
