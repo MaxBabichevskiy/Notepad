@@ -108,7 +108,7 @@ namespace Notepad
         {
             this.Width = Properties.Settings.Default.formWidth;
             this.Height = Properties.Settings.Default.formHeight;
-            notebox.Font = Properties.Settings.Default.textFont;
+            textBox1.Font = Properties.Settings.Default.textFont;
             if (Properties.Settings.Default.statusStripVisible == true)
             { mViewStatusStrip.CheckState = CheckState.Checked; }
             else
@@ -123,8 +123,8 @@ namespace Notepad
         {
             Properties.Settings.Default.formWidth = this.Width;
             Properties.Settings.Default.formHeight = this.Height;
-            Properties.Settings.Default.textTransfer = notebox.WordWrap;
-            Properties.Settings.Default.textFont = notebox.Font;
+            Properties.Settings.Default.textTransfer = textBox1.WordWrap;
+            Properties.Settings.Default.textFont = textBox1.Font;
             Properties.Settings.Default.statusStripVisible = statusStrip.Visible;
             Properties.Settings.Default.Save();
         }
@@ -220,11 +220,11 @@ namespace Notepad
 
         private void шрифтToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fontDialog.Font = notebox.Font;
+            fontDialog.Font = textBox1.Font;
             DialogResult = fontDialog.ShowDialog();
             if (DialogResult == DialogResult.OK)
             {
-                notebox.Font = fontDialog.Font;
+                textBox1.Font = fontDialog.Font;
             }
         }
 
@@ -232,16 +232,16 @@ namespace Notepad
         {
             if (mFormatTransfer.CheckState == CheckState.Checked)
             {
-                notebox.WordWrap = true;
-                notebox.ScrollBars = ScrollBars.Vertical;
+                textBox1.WordWrap = true;
+                textBox1.ScrollBars = ScrollBars.Vertical;
                 mEditGo.Enabled = false;
                 statusLab1.Visible = false;
                 statusLinesCount.Visible = false;
             }
             else
             {
-                notebox.WordWrap = false;
-                notebox.ScrollBars = ScrollBars.Both;
+                textBox1.WordWrap = false;
+                textBox1.ScrollBars = ScrollBars.Both;
                 mEditGo.Enabled = true;
                 statusLab1.Visible = true;
                 statusLinesCount.Visible = true;
