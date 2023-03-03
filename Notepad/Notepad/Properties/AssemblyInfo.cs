@@ -5,13 +5,13 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("Notepad")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Блокнот")]
+[assembly: AssemblyDescription("Приложение для ваших заметок")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Notepad")]
+[assembly: AssemblyCompany("Babichevskyi Co.")]
+[assembly: AssemblyProduct("Блокнот")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Babichevskyi Co.")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми

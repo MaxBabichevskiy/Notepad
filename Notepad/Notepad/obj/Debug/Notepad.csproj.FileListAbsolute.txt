@@ -9,3 +9,6 @@ C:\Users\Maxim\source\repos\Notepad\Notepad\obj\Debug\Notepad.csproj.GenerateRes
 C:\Users\Maxim\source\repos\Notepad\Notepad\obj\Debug\Notepad.csproj.CoreCompileInputs.cache
 C:\Users\Maxim\source\repos\Notepad\Notepad\obj\Debug\Notepad.exe
 C:\Users\Maxim\source\repos\Notepad\Notepad\obj\Debug\Notepad.pdb
+C:\Users\Maxim\source\repos\Notepad\Notepad\obj\Debug\Notepad.AboutForm.resources
+C:\Users\Maxim\source\repos\Notepad\Notepad\obj\Debug\Notepad.Перейти.resources
+C:\Users\Maxim\source\repos\Notepad\Notepad\obj\Debug\Notepad.SearchForm.resources

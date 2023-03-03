@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace Notepad
 {
@@ -83,6 +85,9 @@ namespace Notepad
         //        MessageBox.Show("Unchecked");
 
         //}
+
+        
+
 
 
 
@@ -269,6 +274,40 @@ namespace Notepad
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
             tbChange = true;
+        }
+
+        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mFileNew_Click(object sender, EventArgs e)
+        {
+            if (tbChange == true)
+            {
+                DialogResult message = MessageBox.Show("Сохранить текущий документ перед созданием нового?", "Создание документа", MessageBoxButtons.YesNoCancel);
+                if (message == DialogResult.Yes)
+                {
+                    if (docPath != "")
+                    {
+                        FileWork.SaveFile(ref textBox1, ref tbChange, ref docPath);
+                        FileWork.CreateFile(ref textBox1, ref tbChange, ref docPath);
+                    }
+                    else if (docPath == "")
+                    {
+                        FileWork.SaveAsFile(ref textBox1, ref tbChange, ref docPath);
+                        FileWork.CreateFile(ref textBox1, ref tbChange, ref docPath);
+                    }
+                }
+                else if (message == DialogResult.No)
+                {
+                    FileWork.CreateFile(ref textBox1, ref tbChange, ref docPath);
+                }
+            }
+            else
+            {
+                FileWork.CreateFile(ref textBox1, ref tbChange, ref docPath);
+            }
         }
     }
 }
