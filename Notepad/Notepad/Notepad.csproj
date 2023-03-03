@@ -53,11 +53,11 @@
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FileWork.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FMainForm.Designer.cs">
+      <DependentUpon>FMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GoToForm.cs">
       <SubType>Form</SubType>
@@ -73,11 +73,12 @@
     <Compile Include="SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextWork.cs" />
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FMainForm.resx">
+      <DependentUpon>FMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GoToForm.resx">
       <DependentUpon>GoToForm.cs</DependentUpon>

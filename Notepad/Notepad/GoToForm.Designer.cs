@@ -1,6 +1,6 @@
 ﻿namespace Notepad
 {
-    partial class Перейти
+    partial class GoToForm
     {
         /// <summary>
         /// Required designer variable.
@@ -60,7 +60,6 @@
             this.labGo.Size = new System.Drawing.Size(125, 13);
             this.labGo.TabIndex = 3;
             this.labGo.Text = "Введите номер строки:";
-            this.labGo.Click += new System.EventHandler(this.label1_Click);
             // 
             // butCancel
             // 
@@ -72,7 +71,7 @@
             this.butCancel.UseVisualStyleBackColor = true;
             this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
-            // Перейти
+            // GoToForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +83,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Перейти";
+            this.Name = "GoToForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.Text = "GoToForm";

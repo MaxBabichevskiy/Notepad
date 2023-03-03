@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.mFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mFileNew = new System.Windows.Forms.ToolStripMenuItem();
             this.mFileOpen = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,23 +68,23 @@
             this.statusLab4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusCharCount = new System.Windows.Forms.ToolStripStatusLabel();
             this.FontDialog = new System.Windows.Forms.FontDialog();
-            this.menuStrip1.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // menuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mFile,
             this.mEdit,
             this.mFormat,
             this.mView,
             this.mHelp});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.TabIndex = 2;
+            this.menuStrip.Text = "menuStrip1";
             // 
             // mFile
             // 
@@ -99,7 +99,6 @@
             this.mFile.Name = "mFile";
             this.mFile.Size = new System.Drawing.Size(48, 20);
             this.mFile.Text = "Файл";
-            this.mFile.Click += new System.EventHandler(this.файлToolStripMenuItem_Click_1);
             // 
             // mFileNew
             // 
@@ -169,7 +168,6 @@
             this.mEdit.Name = "mEdit";
             this.mEdit.Size = new System.Drawing.Size(59, 20);
             this.mEdit.Text = "Правка";
-            this.mEdit.Click += new System.EventHandler(this.правкаToolStripMenuItem_Click);
             // 
             // mEditCancel
             // 
@@ -276,14 +274,13 @@
             this.mView.Name = "mView";
             this.mView.Size = new System.Drawing.Size(39, 20);
             this.mView.Text = "Вид";
-            this.mView.Click += new System.EventHandler(this.видToolStripMenuItem_Click);
             // 
             // mViewStatusStrip
             // 
             this.mViewStatusStrip.Checked = true;
             this.mViewStatusStrip.CheckState = System.Windows.Forms.CheckState.Checked;
             this.mViewStatusStrip.Name = "mViewStatusStrip";
-            this.mViewStatusStrip.Size = new System.Drawing.Size(180, 22);
+            this.mViewStatusStrip.Size = new System.Drawing.Size(173, 22);
             this.mViewStatusStrip.Text = "Строка состояния";
             this.mViewStatusStrip.CheckStateChanged += new System.EventHandler(this.mViewStatusStrip_CheckStateChanged);
             this.mViewStatusStrip.Click += new System.EventHandler(this.строкаСостоянияToolStripMenuItem_Click);
@@ -345,7 +342,6 @@
             this.statusLab1.Name = "statusLab1";
             this.statusLab1.Size = new System.Drawing.Size(109, 17);
             this.statusLab1.Text = "Количество строк:";
-            this.statusLab1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // statusLinesCount
             // 
@@ -400,13 +396,13 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.menuStrip);
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "FMainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -415,7 +411,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem mFile;
         private System.Windows.Forms.ToolStripMenuItem mFileNew;
         private System.Windows.Forms.ToolStripMenuItem mFileOpen;
@@ -439,11 +435,9 @@
         private System.Windows.Forms.ToolStripMenuItem mViewStatusStrip;
         private System.Windows.Forms.ToolStripMenuItem mHelp;
         private System.Windows.Forms.ToolStripMenuItem mHelpAboutProgram;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.PrintDialog printDialog;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog;
-        private System.Windows.Forms.ToolStripMenuItem mEditFind;
         private System.Windows.Forms.ToolStripMenuItem mEditGo;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel statusLab1;
@@ -455,6 +449,8 @@
         private System.Windows.Forms.ToolStripStatusLabel statusLab4;
         private System.Windows.Forms.ToolStripStatusLabel statusCharCount;
         private System.Windows.Forms.FontDialog FontDialog;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.ToolStripMenuItem mEditFind;
     }
 }
 

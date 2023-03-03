@@ -138,7 +138,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SearchForm";
             this.Text = "SearchForm";
-            this.Load += new System.EventHandler(this.SearchForm_Load);
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

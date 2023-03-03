@@ -21,83 +21,18 @@ namespace Notepad
         string buffer;
         public FMainForm()
         {
-            InitializeComponent();
-
-            
+            InitializeComponent();           
 
             textBox1.Multiline = true;
             textBox1.Dock = DockStyle.Fill;
 
-
             ToolStripMenuItem copyMenuItem = new ToolStripMenuItem("Скопировать");
             ToolStripMenuItem pasteMenuItem = new ToolStripMenuItem("Вставить");
-
-
-//            contextMenuStrip1.Items.AddRange(new[] { copyMenuItem, pasteMenuItem });
-
-           // textBox1.ContextMenuStrip = contextMenuStrip1;
-
 
             copyMenuItem.Click += copyMenuIteam_Click;
             pasteMenuItem.Click += pasteMenuIteam_Click;
 
-        }
-        //    ToolStripMenuItem fileItem = new ToolStripMenuItem("Файл");
-
-        //    ToolStripMenuItem newItem = new ToolStripMenuItem("Создать")
-        //    {
-        //        Checked = true,
-        //        CheckOnClick = true
-
-        //    };
-        //    newItem.CheckedChanged += menuItem_ChakedChanged;
-        //    fileItem.DropDownItems.Add(newItem);
-
-        //    ToolStripMenuItem saveItem = new ToolStripMenuItem("Сохранить")
-        //    {
-        //        Checked = true,
-        //        CheckOnClick = true
-
-        //    };
-        //    saveItem.CheckedChanged += menuItem_ChakedChanged;
-        //    saveItem.ShortcutKeys = Keys.Control | Keys.P;
-        //    fileItem.DropDownItems.Add(saveItem);
-
-        //    //fileItem.DropDownItems.Add(new ToolStripMenuItem("Сохранить"));
-
-        //    menuStrip1.Items.Add(fileItem);
-
-        //    ToolStripMenuItem aboutItem = new ToolStripMenuItem("About");
-        //    aboutItem.Click += aboutItem_Click;
-        //    menuStrip1.Items.Add(aboutItem);
-        //}
-
-        //void aboutItem_Click(object sender, EventArgs e)
-        //{
-        //    MessageBox.Show("About programm");
-        //}
-        //void menuItem_ChakedChanged(object sender, EventArgs e)
-        //{
-        //    ToolStripMenuItem menuItem= sender as ToolStripMenuItem;
-        //    if (menuItem.CheckState == CheckState.Checked)
-        //        MessageBox.Show("Checked");
-        //    else if(menuItem.CheckState == CheckState.Unchecked)
-        //        MessageBox.Show("Unchecked");
-
-        //}
-
-        
-
-
-
-
-
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         void copyMenuIteam_Click(object sender, EventArgs e)
         {
@@ -132,21 +67,6 @@ namespace Notepad
             Properties.Settings.Default.textFont = textBox1.Font;
             Properties.Settings.Default.statusStripVisible = statusStrip.Visible;
             Properties.Settings.Default.Save();
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void файлToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void видToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void отменитьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,48 +108,18 @@ namespace Notepad
             textBox1.SelectAll();
         }
 
-        private void файлToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void времяИДатаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBox1.AppendText(Environment.NewLine + Convert.ToString(System.DateTime.Now));
         }
 
-        private void заменитьToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void правкаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void перейтиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void найтиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void найтиДалееToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void шрифтToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fontDialog.Font = textBox1.Font;
-            DialogResult = fontDialog.ShowDialog();
+            FontDialog.Font = textBox1.Font;
+            DialogResult = FontDialog.ShowDialog();
             if (DialogResult == DialogResult.OK)
             {
-                textBox1.Font = fontDialog.Font;
+                textBox1.Font = FontDialog.Font;
             }
         }
 
@@ -276,14 +166,8 @@ namespace Notepad
             tbChange = true;
             TextWork.StatusAnalize(ref textBox1, ref statusLinesCount, ref statusWordsCount, ref statusCharSpaceCount, ref statusCharCount);
 
-            TextWork.mEditEnableds(ref textBox1, ref mEditCopy, ref mEditCut, ref mEditDel, ref mEditFind, ref mEditGo);
+           
         }
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void mFileNew_Click(object sender, EventArgs e)
         {
             if (tbChange == true)
@@ -330,24 +214,9 @@ namespace Notepad
             FileWork.SaveAsFile(ref textBox1, ref tbChange, ref docPath);
         }
 
-        private void mFilePageParam_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void mFilePrint_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void mFileExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
         }
 
         private void mEditFind_Click(object sender, EventArgs e)

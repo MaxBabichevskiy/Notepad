@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+
 namespace Notepad
 {
     public partial class SearchForm : Form
@@ -43,62 +44,50 @@ namespace Notepad
             findCutLength = 0;
         }
 
-
-
-
-
-
-        private void SearchForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
         private void btFind_Click(object sender, EventArgs e)
         {
-            MainForm main = this.Owner as MainForm;
+            FMainForm main = this.Owner as FMainForm;
             if (main != null)
             {
                 if (cbReg.CheckState == CheckState.Checked)
                 {
-                    TextWork.FindTextBox(ref main.notebox, tbFind.Text, ref findCutLength, true);
+                    TextWork.FindTextBox(ref main.textBox1, tbFind.Text, ref findCutLength, true);
                 }
                 else
                 {
-                    TextWork.FindTextBox(ref main.notebox, tbFind.Text, ref findCutLength, false);
+                    TextWork.FindTextBox(ref main.textBox1, tbFind.Text, ref findCutLength, false);
                 }
             }
         }
 
         private void btReplace_Click(object sender, EventArgs e)
         {
-            MainForm main = this.Owner as MainForm;
+            FMainForm main = this.Owner as FMainForm;
             if (main != null)
             {
                 if (cbReg.CheckState == CheckState.Checked)
                 {
-                    TextWork.ReplaceTextBox(ref main.notebox, tbFind.Text, tbReplace.Text, ref findCutLength, true);
+                    TextWork.ReplaceTextBox(ref main.textBox1, tbFind.Text, tbReplace.Text, ref findCutLength, true);
                 }
                 else
                 {
-                    TextWork.ReplaceTextBox(ref main.notebox, tbFind.Text, tbReplace.Text, ref findCutLength, false);
+                    TextWork.ReplaceTextBox(ref main.textBox1, tbFind.Text, tbReplace.Text, ref findCutLength, false);
                 }
             }
         }
 
         private void btReplaceAll_Click(object sender, EventArgs e)
         {
-            MainForm main = this.Owner as MainForm;
+            FMainForm main = this.Owner as FMainForm;
             if (main != null)
             {
                 if (cbReg.CheckState == CheckState.Checked)
                 {
-                    TextWork.ReplaceAllTextBox(ref main.notebox, tbFind.Text, tbReplace.Text, true);
+                    TextWork.ReplaceAllTextBox(ref main.textBox1, tbFind.Text, tbReplace.Text, true);
                 }
                 else
                 {
-                    TextWork.ReplaceAllTextBox(ref main.notebox, tbFind.Text, tbReplace.Text, false);
+                    TextWork.ReplaceAllTextBox(ref main.textBox1, tbFind.Text, tbReplace.Text, false);
                 }
             }
         }

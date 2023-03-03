@@ -9,33 +9,24 @@ using System.Windows.Forms;
 
 namespace Notepad
 {
-    public partial class Перейти : Form
+    public partial class GoToForm : Form
     {
-        public Перейти()
+        public GoToForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Перейти_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void butGo_Click(object sender, EventArgs e)
         {
-            MainForm main = this.Owner as MainForm;
+            FMainForm main = this.Owner as FMainForm;
             if (main != null)
             {
                 int lineNumber = Convert.ToInt32(tbLineNum.Text);
-                if (lineNumber > 0 && lineNumber <= main.notebox.Lines.Count())
+                if (lineNumber > 0 && lineNumber <= main.textBox1.Lines.Count())
                 {
-                    main.notebox.SelectionStart = main.notebox.GetFirstCharIndexFromLine(Convert.ToInt32(tbLineNum.Text) - 1);
-                    main.notebox.ScrollToCaret();
+                    main.textBox1.SelectionStart = main.textBox1.GetFirstCharIndexFromLine(Convert.ToInt32(tbLineNum.Text) - 1);
+                    main.textBox1.ScrollToCaret();
                     this.Close();
                 }
             }
@@ -44,6 +35,11 @@ namespace Notepad
         private void butCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Перейти_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

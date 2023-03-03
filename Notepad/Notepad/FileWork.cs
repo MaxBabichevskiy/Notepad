@@ -16,7 +16,7 @@ namespace Notepad
             notebox.Clear();
             docPath = "";
             tbChange = false;
-            Form1.ActiveForm.Text = newDocName + " — " + programmName;
+            FMainForm.ActiveForm.Text = newDocName + " — " + programmName;
         }
 
         public static void OpenFile(ref TextBox notebox, ref bool tbChange, ref string docPath) // Метод "Открыть документ"
@@ -33,7 +33,7 @@ namespace Notepad
                 reader.Close();
                 docPath = openDocument.FileName;
                 tbChange = false;
-                Form1.ActiveForm.Text = openDocument.SafeFileName + " — " + programmName;
+                FMainForm.ActiveForm.Text = openDocument.SafeFileName + " — " + programmName;
             }
         }
 
@@ -63,7 +63,7 @@ namespace Notepad
                 writer.Close(); //закрываем поток
                 tbChange = false;
                 docPath = saveAsDocument.FileName;
-                Form1.ActiveForm.Text = Path.GetFileName(saveAsDocument.FileName) + " — " + programmName;
+                FMainForm.ActiveForm.Text = Path.GetFileName(saveAsDocument.FileName) + " — " + programmName;
             }
             else
             {
