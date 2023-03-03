@@ -39,22 +39,23 @@
             // 
             this.tbLineNum.Location = new System.Drawing.Point(21, 44);
             this.tbLineNum.Name = "tbLineNum";
-            this.tbLineNum.Size = new System.Drawing.Size(122, 20);
+            this.tbLineNum.Size = new System.Drawing.Size(168, 20);
             this.tbLineNum.TabIndex = 0;
             // 
             // butGo
             // 
             this.butGo.Location = new System.Drawing.Point(21, 70);
             this.butGo.Name = "butGo";
-            this.butGo.Size = new System.Drawing.Size(57, 23);
+            this.butGo.Size = new System.Drawing.Size(105, 23);
             this.butGo.TabIndex = 1;
-            this.butGo.Text = "button1";
+            this.butGo.Text = "Перейти к строке";
             this.butGo.UseVisualStyleBackColor = true;
+            this.butGo.Click += new System.EventHandler(this.butGo_Click);
             // 
             // labGo
             // 
             this.labGo.AutoSize = true;
-            this.labGo.Location = new System.Drawing.Point(18, 18);
+            this.labGo.Location = new System.Drawing.Point(39, 18);
             this.labGo.Name = "labGo";
             this.labGo.Size = new System.Drawing.Size(125, 13);
             this.labGo.TabIndex = 3;
@@ -63,18 +64,19 @@
             // 
             // butCancel
             // 
-            this.butCancel.Location = new System.Drawing.Point(84, 70);
+            this.butCancel.Location = new System.Drawing.Point(132, 70);
             this.butCancel.Name = "butCancel";
             this.butCancel.Size = new System.Drawing.Size(57, 23);
             this.butCancel.TabIndex = 4;
-            this.butCancel.Text = "button2";
+            this.butCancel.Text = "Отмена";
             this.butCancel.UseVisualStyleBackColor = true;
+            this.butCancel.Click += new System.EventHandler(this.butCancel_Click);
             // 
             // Перейти
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(166, 111);
+            this.ClientSize = new System.Drawing.Size(212, 110);
             this.Controls.Add(this.butCancel);
             this.Controls.Add(this.labGo);
             this.Controls.Add(this.butGo);
@@ -87,6 +89,7 @@
             this.ShowInTaskbar = false;
             this.Text = "GoToForm";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Перейти_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbLineNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -63,6 +63,7 @@
             this.tbFind.Name = "tbFind";
             this.tbFind.Size = new System.Drawing.Size(278, 20);
             this.tbFind.TabIndex = 2;
+            this.tbFind.TextChanged += new System.EventHandler(this.tbFind_TextChanged);
             // 
             // tbReplace
             // 
@@ -89,6 +90,7 @@
             this.btFind.TabIndex = 5;
             this.btFind.Text = "Найти далее";
             this.btFind.UseVisualStyleBackColor = true;
+            this.btFind.Click += new System.EventHandler(this.btFind_Click);
             // 
             // btReplace
             // 
@@ -98,6 +100,7 @@
             this.btReplace.TabIndex = 6;
             this.btReplace.Text = "Заменить";
             this.btReplace.UseVisualStyleBackColor = true;
+            this.btReplace.Click += new System.EventHandler(this.btReplace_Click);
             // 
             // btReplaceAll
             // 
@@ -107,6 +110,7 @@
             this.btReplaceAll.TabIndex = 7;
             this.btReplaceAll.Text = "Заменить всё";
             this.btReplaceAll.UseVisualStyleBackColor = true;
+            this.btReplaceAll.Click += new System.EventHandler(this.btReplaceAll_Click);
             // 
             // btCancel
             // 
@@ -116,6 +120,7 @@
             this.btCancel.TabIndex = 8;
             this.btCancel.Text = "Отмена";
             this.btCancel.UseVisualStyleBackColor = true;
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // SearchForm
             // 
@@ -133,6 +138,7 @@
             this.Controls.Add(this.label1);
             this.Name = "SearchForm";
             this.Text = "SearchForm";
+            this.Load += new System.EventHandler(this.SearchForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
