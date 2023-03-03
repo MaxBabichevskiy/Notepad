@@ -309,5 +309,131 @@ namespace Notepad
                 FileWork.CreateFile(ref textBox1, ref tbChange, ref docPath);
             }
         }
+
+        private void mFileSave_Click(object sender, EventArgs e)
+        {
+            if (docPath != "")
+            {
+                FileWork.SaveFile(ref textBox1, ref tbChange, ref docPath);
+            }
+            else
+            {
+                FileWork.SaveAsFile(ref textBox1, ref tbChange, ref docPath);
+            }
+        }
+
+        private void mFileSaveAs_Click(object sender, EventArgs e)
+        {
+            FileWork.SaveAsFile(ref textBox1, ref tbChange, ref docPath);
+        }
+
+        private void mFilePageParam_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mFilePrint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mFileExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void mEditFind_Click(object sender, EventArgs e)
+        {
+            SearchForm findText = new SearchForm();
+            findText.Owner = this;
+            findText.Show();
+        }
+
+        private void mFileOpen_Click(object sender, EventArgs e)
+        {
+            if (tbChange == true)
+            {
+                DialogResult message = MessageBox.Show("Сохранить текущий документ перед открытием нового?", "Открытие документа", MessageBoxButtons.YesNoCancel);
+                if (message == DialogResult.Yes)
+                {
+                    if (docPath != "")
+                    {
+                        FileWork.SaveFile(ref textBox1, ref tbChange, ref docPath);
+                        FileWork.OpenFile(ref textBox1, ref tbChange, ref docPath);
+                    }
+                    else if (docPath == "")
+                    {
+                        FileWork.SaveAsFile(ref textBox1, ref tbChange, ref docPath);
+                        FileWork.OpenFile(ref textBox1, ref tbChange, ref docPath);
+                    }
+                }
+                else if (message == DialogResult.No)
+                {
+                    FileWork.OpenFile(ref textBox1, ref tbChange, ref docPath);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                FileWork.OpenFile(ref textBox1, ref tbChange, ref docPath);
+            }
+        }
+
+        private void mFileSaveAs_Click_1(object sender, EventArgs e)
+        {
+            FileWork.SaveAsFile(ref textBox1, ref tbChange, ref docPath);
+        }
+
+        private void mFilePageParam_Click_1(object sender, EventArgs e)
+        {
+            if (pageSetupDialog.ShowDialog() == DialogResult.OK)
+            {
+                printDocument.DefaultPageSettings = pageSetupDialog.PageSettings;
+            }
+        }
+
+        private void mFilePrint_Click_1(object sender, EventArgs e)
+        {
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    printDocument.Print();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ошибка параметров печати.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+        private void mFileExit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void mEditFind_Click_1(object sender, EventArgs e)
+        {
+            SearchForm findText = new SearchForm();
+            findText.Owner = this;
+            findText.Show();
+        }
+
+        private void mEditGo_Click(object sender, EventArgs e)
+        {
+            GoToForm gotoform = new GoToForm();
+            gotoform.Owner = this;
+            gotoform.tbLineNum.Minimum = 0;
+            gotoform.tbLineNum.Maximum = notebox.Lines.Count();
+            gotoform.ShowDialog();
+        }
     }
 }

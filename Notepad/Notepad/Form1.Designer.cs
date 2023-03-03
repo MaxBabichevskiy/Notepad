@@ -114,6 +114,7 @@
             this.mFileOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.mFileOpen.Size = new System.Drawing.Size(204, 22);
             this.mFileOpen.Text = "Открыть...";
+            this.mFileOpen.Click += new System.EventHandler(this.mFileOpen_Click);
             // 
             // mFileSave
             // 
@@ -121,18 +122,21 @@
             this.mFileSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.mFileSave.Size = new System.Drawing.Size(204, 22);
             this.mFileSave.Text = "Сохранить";
+            this.mFileSave.Click += new System.EventHandler(this.mFileSave_Click);
             // 
             // mFileSaveAs
             // 
             this.mFileSaveAs.Name = "mFileSaveAs";
             this.mFileSaveAs.Size = new System.Drawing.Size(204, 22);
             this.mFileSaveAs.Text = "Сохранить как...";
+            this.mFileSaveAs.Click += new System.EventHandler(this.mFileSaveAs_Click_1);
             // 
             // mFilePageParam
             // 
             this.mFilePageParam.Name = "mFilePageParam";
             this.mFilePageParam.Size = new System.Drawing.Size(204, 22);
             this.mFilePageParam.Text = "Параметры страницы...";
+            this.mFilePageParam.Click += new System.EventHandler(this.mFilePageParam_Click_1);
             // 
             // mFilePrint
             // 
@@ -140,12 +144,14 @@
             this.mFilePrint.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
             this.mFilePrint.Size = new System.Drawing.Size(204, 22);
             this.mFilePrint.Text = "Печать...";
+            this.mFilePrint.Click += new System.EventHandler(this.mFilePrint_Click_1);
             // 
             // mFileExit
             // 
             this.mFileExit.Name = "mFileExit";
             this.mFileExit.Size = new System.Drawing.Size(204, 22);
             this.mFileExit.Text = "Выход";
+            this.mFileExit.Click += new System.EventHandler(this.mFileExit_Click_1);
             // 
             // mEdit
             // 
@@ -304,6 +310,7 @@
             this.mEditFind.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.mEditFind.Size = new System.Drawing.Size(221, 22);
             this.mEditFind.Text = "Найти и заменить...";
+            this.mEditFind.Click += new System.EventHandler(this.mEditFind_Click_1);
             // 
             // mEditGo
             // 
@@ -311,6 +318,7 @@
             this.mEditGo.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.G)));
             this.mEditGo.Size = new System.Drawing.Size(221, 22);
             this.mEditGo.Text = "Перейти...";
+            this.mEditGo.Click += new System.EventHandler(this.mEditGo_Click);
             // 
             // statusStrip
             // 
